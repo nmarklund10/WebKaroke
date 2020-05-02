@@ -177,6 +177,7 @@ function initializeControlButton() {
         var song = document.getElementById("song");
         if (song.paused) {
             song.play();
+            window.currentSong.played = true;
             updateControlButton("pause");
             window.updateTime = requestAnimationFrame(continuoslyUpdateCurrentSongTime);
             // window.updateTime = setInterval(updateCurrentSongTime, 50);
@@ -192,6 +193,10 @@ function initializeControlButton() {
 function initializeRestartButton() {
     document.getElementById("restart").addEventListener("click", function() {
         this.blur();
+        window.currentSong.played = false;
+        window.currentSong.currentPosition = 0;
+        clearInterval(window.intervalId);
+        window.intervalId = null;
         document.getElementById("song").currentTime = 0;
         updateControlButton("play", true);
         document.getElementById("song").pause();
@@ -238,7 +243,68 @@ function updateCurrentSongTime() {
 }
 
 function updateKaroke() {
+    if (!window.currentSong.played) {
+        initializeKaroke();
+    }
+    else {
+        let number = window.currentSong.currentPosition;
+        if (number < window.currentSong.karoke.length) {
+            let nextKaroke = window.currentSong.karoke[number];
+            let currentTime = document.getElementById("song").currentTime;
+            if ((nextKaroke.start - 0.5 <= currentTime) && (window.intervalId == null)) {
+                startKarokeAnimationLine(number, nextKaroke);
+            }
+        }
+    }
+}
 
+function startKarokeAnimationLine(number, nextKaroke) {
+    let upcoming = document.getElementById(`upcoming${number}`);
+    let karokePos = document.getElementById(`pos${number}`);
+    let len = upcoming.textContent.length;
+    let time = (nextKaroke.end - nextKaroke.start) * 1000;
+    let highlightLetter = function() {
+        karokePos.textContent += upcoming.textContent[0];
+        upcoming.textContent = upcoming.textContent.substr(1);
+        if (upcoming.textContent.length == 0) {
+            clearInterval(window.intervalId);
+            window.intervalId = null;
+            window.currentSong.currentPosition += 1;
+            if (number != 0) {
+                addKarokeLine();
+            }
+            return;
+        }
+    }
+    window.intervalId = setInterval(highlightLetter, time/len);
+}
+
+function initializeKaroke() {
+    let display = document.getElementById("karokeDisplay");
+    display.innerHTML = '';
+    for (let i = 0; i < 4; i++) {
+        let lyric = window.currentSong.karoke[i].lyric;
+        display.innerHTML +=
+            `<h5 class="karokeTextLine" id="line${i}">
+                <span class="karokePos" id="pos${i}"></span><span class="upcoming" id="upcoming${i}">${lyric}</span>
+            </h5>`
+    }
+
+}
+
+function addKarokeLine() {
+    let number = window.currentSong.currentPosition;
+    if ((number + 2) < window.currentSong.karoke.length) {
+        number += 2;
+        let karokeDisplay = document.getElementById("karokeDisplay");
+        let karokeLines = karokeDisplay.childNodes;
+        let lyric = window.currentSong.karoke[number].lyric;
+        karokeDisplay.removeChild(karokeLines[0]);
+        karokeDisplay.innerHTML +=
+            `<h5 class="karokeTextLine" id="line${number}">
+                <span class="karokePos" id="pos${number}"></span><span class="upcoming" id="upcoming${number}">${lyric}</span>
+            </h5>`
+    }
 }
 
 /* <h5 class="karokeTextLine">I wish it was just another day.</h5>

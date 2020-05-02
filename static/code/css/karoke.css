@@ -1,0 +1,29 @@
+h3 {
+    color: rgb(94, 94, 112)
+}
+
+#lrcUpload {
+    background-color: rgb(180, 180, 180);
+}
+
+#audioUpload {
+    color: white;
+    background-color: rgb(15, 13, 34);
+}
+
+#restart {
+    background-color: rgb(238, 92, 24);
+}
+
+#progressBar {
+    transition: none;
+}
+
+#karokeCard {
+    color: white;
+    background-color: rgb(99, 99, 218);
+}
+
+.karokePos {
+    color: rgb(221, 190, 11)
+}

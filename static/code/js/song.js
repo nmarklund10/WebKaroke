@@ -8,6 +8,7 @@ class Song {
         this.length = 0;
         this.lyrics = [];
         this.karoke = [];
+        this.played = false;
         this.parse_lrc(lrc_file);
     }
 
@@ -21,16 +22,27 @@ class Song {
     }
 
     buildKaroke() {
-        for (var i = 0; i < this.lyrics.length; i++) {
-            var lyric = this.lyrics[i];
+        for (let i = 0; i < this.lyrics.length; i++) {
+            let lyric = this.lyrics[i];
+            let previousLyric =
+                (i == 0) ?
+                {end: 0}
+                : this.karoke[this.karoke.length - 1]
             if (lyric.lyric == "") {
                 this.karoke[this.karoke.length - 1].end = lyric.time;
             }
             else {
+                if (lyric.time - previousLyric.end >= 4) {
+                    this.karoke.push({
+                        start: previousLyric.end + 1,
+                        lyric: "[break]",
+                        end: lyric.time - 1
+                    })
+                }
                 this.karoke.push({
                     start: lyric.time,
                     lyric: lyric.lyric,
-                    end: 0
+                    end: this.length
                 });
             }
         }
