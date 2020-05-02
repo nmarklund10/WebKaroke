@@ -5,55 +5,121 @@ class Song {
         this.valid = true;
         this.title = '';
         this.artist = '';
-        this.lyrics = []
+        this.length = 0;
+        this.lyrics = [];
+        this.karoke = [];
         this.parse_lrc(lrc_file);
     }
 
     parse_lrc(file) {
         file = file.replace('\r', '');
         file = file.split('\n');
+        if (!this.decompressLyrics(file)) {
+            return;
+        }
+        this.buildKaroke()
+    }
+
+    buildKaroke() {
+        for (var i = 0; i < this.lyrics.length; i++) {
+            var lyric = this.lyrics[i];
+            if (lyric.lyric == "") {
+                this.karoke[this.karoke.length - 1].end = lyric.time;
+            }
+            else {
+                this.karoke.push({
+                    start: lyric.time,
+                    lyric: lyric.lyric,
+                    end: 0
+                });
+            }
+        }
+        this.lyrics = null;
+        this.currentPosition = 0;
+    }
+
+    decompressLyrics (file) {
         for (var i = 0; i < file.length; ++i) {
             this.parseLrcLine(file[i])
             if (!this.valid) {
-                return [];
+                return false;
             }
         }
-        this.title = 'Learn to Love the Lie';
-        this.artist = 'Four Year Strong';
-        this.length = 0; //TODO
-        this.valid = true; //TODO
-        return [];
+        this.lyrics.sort(function(a, b) {
+            return a.time - b.time
+        });
+        this.length = this.lyrics[this.lyrics.length - 1].time
+        return true;
     }
 
     parseLrcLine(line) {
         var line = line.trim();
         if (line != "") {
-            if (line[0] != "[") {
-                this.setError("Invalid first character found in LRC file!");
-                return;
-            }
-            var closingBracket = line.indexOf("]");
-            if (line.length == closingBracket + 1) {
-                line = [line.slice(1, closingBracket)];
+            var regex = /\[[^\]]*\]/g
+            var bracketMatches = line.match(regex)
+            if (bracketMatches.length > 0) {
+                var lyric = this.getNonBracketText(line, bracketMatches);
+                for (var i = 0; i < bracketMatches.length; i++) {
+                    var match = bracketMatches[i];
+                    match = match.substr(1, match.length - 2);
+                    var colonIndex = -1;
+                    if (this.isTimeStamp(match)) {
+                        this.handleLyricLine(match, lyric);
+                    }
+                    else if ((colonIndex = match.indexOf(':')) != -1) {
+                        var splitBracket = [
+                            match.slice(0, colonIndex),
+                            match.slice(colonIndex + 1)
+                        ]
+                        this.handleMetaLine(splitBracket);
+                    }
+                    else {
+                        this.setError(`Invalid line found in LRC file: ${line}`)
+                        break;
+                    }
+                }
             }
             else {
-                line = [line.slice(1, closingBracket), line.slice(closingBracket + 1)];
+                this.setError(`Invalid line found in LRC file: ${line}`)
             }
-            this.parseBracketText(line[0]);
         }
     }
 
-    parseBracketText(text) {
-        var timestampRegex = /\d\d:\d\d.\d\d/;
+    handleLyricLine(bracketText, lyric) {
+        var timestamp = stringToSeconds(bracketText);
+        this.lyrics.push({
+            time: timestamp,
+            lyric: lyric
+        })
+    }
+
+    handleMetaLine(splitBracket) {
+        var text = splitBracket[1].trim();
+        switch(splitBracket[0]) {
+            case 'ar':
+                this.artist = text;
+                break;
+            case 'ti':
+                this.title = text;
+                break;
+        }
+    }
+
+    getNonBracketText(line, bracketMatches) {
+        var lastMatch = bracketMatches[bracketMatches.length - 1];
+        var splitIndex = line.indexOf(lastMatch) + lastMatch.length;
+        return line.substr(splitIndex);
+    }
+
+    isTimeStamp(text) {
+        var timestampRegex = /\d\d:\d\d\.\d\d/;
         var match = text.match(timestampRegex);
         if (match) {
             if (match[0] == text) {
-                var time = stringToSeconds(match[0]);
+                return true;
             }
         }
-        else {
-            // console.log(text);
-        }
+        return false;
     }
 
     startKaroke(event) {
@@ -76,15 +142,7 @@ class Song {
     setError(msg) {
         this.error = msg;
         this.valid = false;
-    }
-
-    static songLengthToTimeString(songLength) {
-        if (!songLength.contains('.')) {
-            songLength += '.00'
-        }
-        if (songLength[0] != '0') {
-            songLength = '0' + songLength
-        }
-        return songLength;
+        this.lyrics = [];
+        this.karoke = [];
     }
 }

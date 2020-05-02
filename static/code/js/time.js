@@ -1,10 +1,7 @@
 // 230.870204 -> 03:50.87
 function secondsToString(seconds) {
-    var datetime = new Date(seconds * 1000)
-    var mins = datetime.getMinutes().toString().padStart(2, '0');
-    var secs = datetime.getSeconds().toString().padStart(2, '0');
-    var ms = datetime.getMilliseconds().toString().padStart(3, '0').substr(0, 2)
-    return `${mins}:${secs}.${ms}`
+    var date = new Date(seconds * 1000)
+    return date.toISOString().substr(14, 8)
 }
 
 //03:45.00 -> 225

@@ -1,68 +1,46 @@
 var lrc_file =
-`[length:  3:45]
+`[length: 3:51]
 [ar:Four Year Strong]
 [ti:Learn to Love the Lie]
-[al:Brain Pain]
-[00:21.40]I wish it was just another day
-[00:24.10]Another ordinary, not extraordinary
-[00:26.50]Just a boring Sunday morning
-[00:28.50]When doing nothing’s the only something we’ve got planned
+[00:21.36]I wish it was just another day
+[00:23.60][00:26.09][00:28.28][00:31.34][00:33.04][00:36.86][00:39.21][00:40.53][00:44.72][00:48.80][00:53.91][00:56.57][01:00.60][01:05.64][01:09.32][01:11.53][01:14.36][01:16.44][01:18.46][01:20.70][01:22.91][01:25.89][01:30.79][01:35.09][01:39.67][01:42.86][01:47.28][01:51.35][01:56.37][01:58.72][02:03.00][02:07.73][02:11.42][02:13.89][02:16.90][02:19.03][02:20.91][02:22.86][02:25.39][02:28.26][02:33.31][02:37.71][02:42.69][02:47.18][02:49.64][02:54.13][02:56.62][03:00.42][03:04.80][03:06.85][03:09.78][03:11.98][03:14.01][03:16.22][03:18.35][03:21.02][03:26.01][03:33.82][03:35.82][03:41.26]
+[00:23.69]Another ordinary, not extraordinary
+[00:26.37]Just a boring Sunday morning
+[00:28.37]When doing nothing's the only something we've got planned
 [00:31.60]But not today
-[00:33.50]We're falling apart and it's showing that we're
-[00:37.00]Basically just trapped in captivity
-[00:39.40]Wishing our way out
-[00:41.00]Just let me cross my fingers behind my back
-[00:45.50]And I’ll swear on anything you want me to after that
-[00:49.50]I’ve heard that if I cross my heart then I’d have to die
-[00:54.80]If you don’t want to say goodbye
-[00:57.80]Then I guess you’ll have to learn to love the lie
-[01:01.62]You and me, we’re really nothing but enemies
-[01:06.26]Pretending we're not meant to be
-[01:09.63]I don’t want to be the one to stay
-[01:11.98]I don’t want to be the one that got away
-[01:15.30]And if I’m being honest
-[01:16.93]You couldn’t get rid of me anyway
-[01:19.00]I don’t want to be the one to stay
-[01:20.94]What the hell, for heaven's sake
-[01:23.74]I don’t want to be the one that got away
-[01:27.73]If Massachusetts had a loyalty
-[01:32.26]I hope it wouldn’t choose you over me
-[01:36.43]And if you’re wondering what keeps me up at night
-[01:40.67]It's thinking that you might be right
-[01:43.39]Just let me cross my fingers behind my back
-[01:47.89]And I’ll swear on anything you want me to after that
-[01:51.82]I’ve heard that if I cross my heart then I’d have to die
-[01:57.18]If you don’t want to say goodbye
-[02:00.06]Then I guess you’ll have to learn to love the lie
-[02:03.56]You and me, we’re really nothing but enemies
-[02:08.31]Pretending that’s exactly how it's supposed to be
-[02:12.08]I don’t want to be the one to stay
-[02:14.69]I don’t want to be the one that got away
-[02:17.42]And if I’m being honest
-[02:19.01]You couldn’t get rid of me anyway
-[02:21.31]I don’t want to be the one to stay
-[02:23.19]What the hell, for heaven's sake
-[02:25.82]I don’t want to be the one that got away
-[02:31.27]You can say what you want about me
-[02:34.50]The old me would not apologize
-[02:40.44]You can do what you want without me
-[02:43.75]If only I could keep us from colliding
-[02:47.32]Overanalyzing
-[02:50.31]Every move we make we think we're just surviving
-[02:54.30]But slowly we were dying
-[02:57.36]Until the rattle somehow brings us back to life
-[03:01.70]So let's learn to love the lie
-[03:05.26]I don’t want to be the one to stay
-[03:07.47]I don’t want to be the one that got away
-[03:10.52]And if I’m being honest
-[03:12.11]You couldn’t get rid of me anyway
-[03:14.42]I don’t want to be the one to stay
-[03:16.28]What the hell, for heaven's sake
-[03:19.00]I don’t want to be the one that got away
-[03:23.90]I don’t want to be the one that got away
-[03:28.40]I don’t want to be the one that got away
-[03:36.98]But we have to laugh to learn to love the lie
-[03:41.50]`
+[00:33.41]We're falling apart and it's showing that we're
+[00:36.96]Basically just trapped in captivity
+[00:39.30]Wishing our way out
+[00:41.01][01:43.25]Just let me cross my fingers behind my back
+[00:45.53][01:47.81]And I'll swear on anything you want me to after that
+[00:49.27][01:51.80]I've heard that if I cross my heart then I'd have to die
+[00:54.78][01:56.95]If you don't want to say goodbye
+[00:57.66][01:59.98]Then I guess you'll have to learn to love the lie
+[01:01.23][02:03.59]You and me, we're really nothing but enemies
+[01:06.32]Pretending we're not meant to be
+[01:09.58][01:18.96][02:12.03][02:21.24][03:05.16][03:14.35]I don't want to be the one to stay
+[01:11.88][01:23.44][02:14.23][02:25.77][03:07.32][03:18.83][03:23.71]I don't want to be the one that got away
+[01:15.03][02:17.28][03:10.35]And if I'm being honest
+[01:16.72][02:19.03][03:12.24]You couldn't get rid of me anyway
+[01:20.87][02:23.17][03:16.24]What the hell, for heaven's sake
+[01:27.67]If Massachusetts had a loyalty
+[01:32.24]I hope it wouldn't choose you over me
+[01:36.66]And if you're wondering what keeps me up at night
+[01:40.37]It's thinking that you might be right
+[02:08.23]Pretending that's exactly how it's supposed to be
+[02:31.15]You can say what you want about me
+[02:34.49]The old me would not apologize
+[02:40.23]You can do what you want without me
+[02:43.68]If only I could keep us from colliding
+[02:47.80]Overanalyzing
+[02:50.38]Every move we make we think we're just surviving
+[02:54.20]But slowly we were dying
+[02:57.26]Until the rattle somehow brings us back to life
+[03:01.66]So let's learn to love the lie
+[03:28.15]I don't want to be the one that got away (if I cross my heart then I'd have to die)
+[03:34.04]But I don't wanna say goodbye
+[03:36.94]But we have to love to learn to love the lie
+`
 
 /* <span id="karokePos" style="color: rgb(221, 190, 11)"></span> */
 
@@ -70,10 +48,12 @@ function resetControls() {
     document.getElementById("nowPlaying").innerHTML = "No song loaded!"
     document.getElementById("audioUpload").disabled = true;
     document.getElementById("control").disabled = true;
-    updateControlButton("play");
+    updateControlButton("play", true);
     document.getElementById("restart").disabled = true;
     document.getElementById("currentTime").innerText = "..";
     document.getElementById("totalTime").innerText = "..";
+    document.getElementsByTagName("audio")[0].src = "";
+    toggleProgressBar(false);
     if (window.currentSong) {
         window.currentSong = undefined;
     }
@@ -85,6 +65,8 @@ function initializePage() {
     initializeAudioButton();
     initializeControlButton();
     initializeRestartButton();
+    $("body").tooltip({ selector: "[data-toggle=tooltip]" });
+    toggleProgressBar(false);
 }
 
 function initializeLrcButton() {
@@ -108,7 +90,7 @@ function readLrcFile() {
 }
 
 function updateNowPlaying() {
-    var status = ''
+    var status = '';
     var nowPlaying = document.getElementById("nowPlaying");
     if (window.currentSong.title != '') {
         nowPlaying.innerHTML =
@@ -142,14 +124,27 @@ function initializeAudioButton() {
     });
 }
 
+function toggleProgressBar(enabled) {
+    var progressDiv = document.getElementById("progressDiv");
+    if (enabled) {
+        $("#progressDiv").tooltip("enable");
+        progressDiv.style.cursor = "pointer";
+    }
+    else {
+        $("#progressDiv").tooltip("disable");
+        progressDiv.style.cursor = "default";
+    }
+}
+
 function initializeSong() {
     var song = document.getElementById("song");
     song.addEventListener("loadedmetadata", function(){
         if (window.currentSong.length > song.duration) {
-            displayError("Audio file is shorter than LRC indicates.");
+            displayError(`Audio file is shorter than LRC indicates (${window.currentSong.length}).`);
             document.getElementsByTagName("audio")[0].src = "";
         }
         else {
+            toggleProgressBar(true);
             updateCurrentSongTime();
             document.getElementById("totalTime").innerText = secondsToString(song.duration);
             document.getElementById("control").disabled = false;
@@ -173,7 +168,7 @@ function initializeSong() {
 
 function getAudioFile() {
     //TODO
-    return document.getElementById("song").src;
+    return "/static/test/learn_to_love_the_lie.mp3";
 }
 
 function initializeControlButton() {
@@ -183,12 +178,13 @@ function initializeControlButton() {
         if (song.paused) {
             song.play();
             updateControlButton("pause");
-            window.updateTime = setInterval(updateCurrentSongTime, 50);
+            window.updateTime = requestAnimationFrame(continuoslyUpdateCurrentSongTime);
+            // window.updateTime = setInterval(updateCurrentSongTime, 50);
         }
         else {
             updateControlButton("play");
             song.pause();
-            clearInterval(window.updateTime)
+            // clearInterval(window.updateTime)
         }
     });
 }
@@ -197,23 +193,36 @@ function initializeRestartButton() {
     document.getElementById("restart").addEventListener("click", function() {
         this.blur();
         document.getElementById("song").currentTime = 0;
-        updateControlButton("play");
+        updateControlButton("play", true);
         document.getElementById("song").pause();
         updateCurrentSongTime();
     });
 }
 
-function updateControlButton(state) {
+function updateControlButton(state, initial=false) {
     clearInterval(window.updateTime);
     if (state == "play") {
         document.getElementById("controlIcon").className = "fa fa-play";
         document.getElementById("control").style.background = "rgb(0, 255, 136)";
-        document.getElementById("control").title = "Play Song";
+        $("#control").attr('data-original-title', 'Play Song').tooltip("show");
     }
     else if (state == "pause") {
         document.getElementById("controlIcon").className = "fa fa-pause";
         document.getElementById("control").style.background = "rgb(253, 224, 59)";
-        document.getElementById("control").title = "Pause Song";
+        $("#control").attr('data-original-title', 'Pause Song').tooltip("show");
+    }
+    if (initial) {
+        $("#control").tooltip("hide")
+    }
+}
+
+function continuoslyUpdateCurrentSongTime() {
+    updateCurrentSongTime();
+    if (!document.getElementById("song").paused) {
+        requestAnimationFrame(continuoslyUpdateCurrentSongTime);
+    }
+    else {
+        window.cancelAnimationFrame(window.updateTime);
     }
 }
 
@@ -225,6 +234,11 @@ function updateCurrentSongTime() {
     var progress = (song.currentTime / song.duration) * 100
     progressBar.setAttribute("aria-valuenow", progress);
     progressBar.style.width = `${progress}%`;
+    updateKaroke();
+}
+
+function updateKaroke() {
+
 }
 
 /* <h5 class="karokeTextLine">I wish it was just another day.</h5>

@@ -8,7 +8,7 @@
 {% block content %}
 <input id="lrcFile" type="file" accept=".lrc" hidden>
 <input id="audioFile" type="file" accept=".mp3,.mp4" hidden>
-<audio id="song" src="{{url_for('static', filename='test/learn_to_love_the_lie.mp3') }}" hidden></audio>
+<audio id="song" hidden></audio>
 <div class="row justify-content-center">
     <div class="col-md-8 py-3">
         <div class="card shadow">
@@ -17,25 +17,25 @@
                 <h3 style="color: rgb(94, 94, 112)">Audio Control</h3>
                 <div class="form-group text-center">
                     <div class="btn-group" role="group">
-                        <button id="lrcUpload" class="btn" style="background-color: rgb(180, 180, 180);" title="Upload .lrc file">
+                        <button id="lrcUpload" class="btn" style="background-color: rgb(180, 180, 180);" data-toggle="tooltip" data-placement="top" title="Upload .lrc file">
                             <span class="fa fa-upload"></span>
                             <span><strong>Step 1:</strong> .LRC</span>
                         </button>
-                        <button id="audioUpload" class="btn" style="color: white; background-color: rgb(15, 13, 34);" title="Upload audio file">
+                        <button id="audioUpload" class="btn" style="color: white; background-color: rgb(15, 13, 34);" data-toggle="tooltip" data-placement="top" title="Upload audio file">
                             <span class="fa fa-upload"></span>
                             <span><strong>Step 2:</strong> Audio</span>
                         </button>
-                        <button id="control" class="btn">
+                        <button id="control" class="btn" data-toggle="tooltip" data-placement="top">
                             <span id="controlIcon"></span>
                         </button>
-                        <button id="restart" class="btn" style="background-color: rgb(238, 92, 24);" title="Restart Song">
+                        <button id="restart" class="btn" style="background-color: rgb(238, 92, 24);" data-toggle="tooltip" data-placement="top" title="Restart Song">
                             <span class="fa fa-undo"></span>
                         </button>
                     </div>
                 </div>
                 <div id="error"></div>
-                <div id="progressDiv" class="progress mb-2" title= "Seek through song" style="cursor: pointer">
-                    <div id="progressBar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="transition-duration: 0.25s;"></div>
+                <div id="progressDiv" class="progress mb-2" data-toggle="tooltip" data-placement="bottom" title= "Seek through song">
+                    <div id="progressBar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="transition: none"></div>
                 </div>
                 <div class="status mb-2">
                     <h6>
